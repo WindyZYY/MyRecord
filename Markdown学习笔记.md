@@ -293,7 +293,7 @@ _______
 > 图片地址可以是外链网址也可以是相对地址
 > ```
 >
-> ![testPic](pic/微信图片_20190424203019.png)
+> ![testPic](https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=79cf53f2074f78f0800b9df5410a6d68/00e93901213fb80ef9ceac7132d12f2eb938947d.jpg)
 
 ##### 7.2 网址表达形式
 
@@ -367,3 +367,11 @@ $$
 \frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\
 \end{vmatrix}
 $$
+
+### 10. 编辑器推荐
+
+个人觉得typora很好，实时显示，有很多快捷键，不用打繁琐的代码。还可以设置主题，导出格式也很齐全。
+
+有个非常齐全的介绍：<https://blog.csdn.net/qq_36759224/article/details/82229243>
+
+(小咸鱼一个，持续更新个人学习笔记，欢迎批评指正。)
