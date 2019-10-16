@@ -6,9 +6,35 @@
 
 > Ans: 加了冒号的就表示后面是个变量或者表达式，不加的就是常量。
 
-##### 2. 注册全局组件的方法
+##### 2. 注册组件的方法
 
-​	
+###### 首先确保，你要注册的组件是暴露出去的，即
+
+> export default{
+>
+> ​	name: 'componentName'
+>
+> }
+
+- 全局组件
+
+  先写好一个组件，然后在main.js文件内写
+
+  > import  componentName  from 'url'（注意是相对地址）
+  >
+  > Vue.use(componentName)
+
+  然后再在需要使用该组件的vue文件中直接使用就好啦
+
+  > <componentName></componentName>
+
+- 局部组件
+
+  在需要引入的vue文件内引入，然后直接使用就行了
+
+  > import componentName from 'url'（也是相对地址）
+  >
+  > <componentName></componentName>
 
 ##### 3. 注册全局组件之后页面无显示？
 
@@ -34,4 +60,10 @@
 
 
 
-##### 8. LinkButton的属性修改
+##### 8. LinkButton的属性修改（easyUI）
+
+##### 9. 小卡片尖角的实现
+
+##### 10. div和textarea编辑时的边框设置
+
+> outline: none;
