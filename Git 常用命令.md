@@ -78,3 +78,36 @@
   > - 强制push
   > - 先pull再push
   > - 不想merge的话就先创建新的分支
+  
+- > error: RPC failed; curl 18 transfer closed with outstanding read data remaining
+  >
+  > fatal: The remote end hung up unexpectedly
+  >
+  > fatal: early EOF 
+  >
+  > fatal: index-pack failed
+
+  > 解决：可能是缓存区溢出
+  >
+  > git config http.postBuffer 524288000
+  >
+  > 若还不行：
+  >
+  > git config --global http.lowSpeedLimit 0
+  >
+  > git config --global htpp.lowSpeedTime 999999
+  >
+  > 如果依旧失败的话
+  >
+  > 先浅层clone ：git clone --depth=1 .git
+  >
+  > 然后更新远程库到本地 ： git clone --unshallow
+
+##### 4. 创建远程新分支
+
+> git branch -a 查看所有分支
+>
+> git checkout -b newbranch 创建本地newbranch新分支
+>
+> git push --set-upstream origin newbranch 把本地newbranch分支推送到远程
+
