@@ -16,8 +16,6 @@ export default{
 }
 ```
 
-
-
 - 全局组件
 
   先写好一个组件，然后在main.js文件内写
@@ -25,13 +23,13 @@ export default{
   ```
   import  componentName  from 'url'（注意是相对地址）
   
-  Vue.use(componentName)
+  Vue.component('lableName',componentName)
   ```
 
   然后再在需要使用该组件的vue文件中直接使用就好啦
 
   ```
-  <componentName></componentName>
+  <lableName></lableName>
   ```
 
 - 局部组件
@@ -40,8 +38,12 @@ export default{
 
   ```
   import componentName from 'url'（也是相对地址）
-  
-  <componentName></componentName>
+  export default{
+  	components: {
+  		'lableName': componentName
+  	}
+  }
+  <lableName></lableName>
   ```
 
 ##### 3. 注册全局组件之后页面无显示？
@@ -62,7 +64,10 @@ export default{
 
 （不知道什么原因
 
-##### 6. router-view 页面重叠
+##### 6. router-view 的问题
+
+- 页面重叠
+- 内部不能用img
 
 ##### 7. 实现动态组件
 
@@ -97,3 +102,55 @@ button:hover:before{
 > before选择器可以向选定的元素前插入内容，使用content属性来指定要插入的内容。还可以指定其他样式。
 >
 > span用来控制原来的内容的显示与隐藏。
+
+##### 12. 居中（水平垂直都居中）
+
+```
+  .centerPos {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+  }
+```
+
+##### 13.VScode常用快捷键
+
+```
+ctrl+c/x/v/s/a太常见了就不说了
+ctrl+/ 单行注释
+ctrl+shift+a  多行注释
+```
+
+##### 14. 鼠标悬浮切换图片
+
+```
+<template>
+	<img :src="myImg">
+<template>
+<script>
+export default{
+	name:'myName',
+	data(){
+		return{
+			myImg: require('相对路径pic1'),
+			img-1: require('相对路径pic1'),
+			img-2: require('相对路径pic2')
+		}
+	},
+	methods:{
+		changePic:function(){
+			this.$set(this.$data,'myImg',this.pic2)
+		},
+		changePicBack:function(){
+			this.$set(this.$data,'myImg',this.pic1)
+		}
+	}
+}
+</script>
+```
+
+##### 15. Vue中onclick不能用，只能用@click？

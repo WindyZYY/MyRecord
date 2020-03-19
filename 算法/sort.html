@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>生成排序动图</title>
+        <script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+        <style>
+            div.blocks{
+                width:30px;
+                height:auto;
+                background-color:aliceblue;
+                border:1px solid #CCC;
+                margin:0px 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            new Vue({
+                el:'#app',
+                data() {
+                    return {
+                        key:1,
+                        numbers:[
+                            {value:3,h:30},
+                            {value:7,h:70},
+                            {value:4,h:40},
+                            {value:10,h:100},
+                            {value:6,h:60}
+                        ]
+                    }
+                }
+            })
+        </script>
+        <div>
+            <div class="blocks" v-for='num in numbers' :style="height:{{num.h}}+'px'">{{key}}</div>
+        </div>
+    </body>
+</html>

@@ -111,3 +111,15 @@
 >
 > git push --set-upstream origin newbranch 把本地newbranch分支推送到远程
 
+
+
+# Git 报错处理
+
+（我真的是什么样的错误都能遇到hhh
+
+|          错误信息           |                           解决方案                           |                           报错原因                           |
+| :-------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| LF will be replaced by CRLF | <kbd>git config --global core.autocrlf true</kbd>git在提交时把CR和LF转换成LF，而在检出代码时，把LF转换成CR和LF<kbd>git config --global core.safecrlf warn</kbd>提交包含混合换行符时给出警告 | CRLF是windows的换行，LF是Linux和mac的换行符。回车符'\r'表示回到一行的开头，换行符'\n'表示另起一行（我们平常用的回车符确切应该叫做回车换行符）Dos和Windows是使用回车（CR）和换行（LF）两个字符来结束一行，即’\r\n‘，而mac和Linux只是用换行来结束一行，即'\n'。这就导致Unix/Mac系统下的文件在Windows里打开的话，所有文字就会变成一行，而windows里的文件在Unix/Mac下打开的话，在每行的结尾可能会多出一个^M的符号，Linux保存的文件在windows上用记事本看会出现黑点。 |
+|                             |                                                              |                                                              |
+|                             |                                                              |                                                              |
+|                             |                                                              |                                                              |
