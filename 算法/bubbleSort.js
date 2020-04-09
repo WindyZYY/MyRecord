@@ -1,3 +1,18 @@
+const readline=require('readline');
+var r1=readline.createInterface({
+    input:process.stdin,
+    output:process.stdout
+});
+
+r1.on('line',function(input){
+    var inputs=input.trim().split(' ');
+
+    var result=bubbleSort(inputs);
+
+    console.log(result);
+})
+
+
 function bubbleSort(arr){
     var len=arr.length;
     for(var i=0;i<len-1;i++){
@@ -9,4 +24,5 @@ function bubbleSort(arr){
             }
         }
     }
+    return arr;
 }
